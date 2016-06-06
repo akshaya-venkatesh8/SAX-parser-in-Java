@@ -20,7 +20,7 @@ public class SAXParsing {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws ParserConfigurationException, SAXException {
+    public static void main(String[] args) throws Exception {
         // TODO code application logic here
     
       try {	
