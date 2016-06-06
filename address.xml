@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<address>
+  <name>Lily Joe</name>
+  <streetnumber>123</streetnumber>
+  <streetname>Main Street</streetname>
+  <secondaryaddress>BLDG 123</secondaryaddress>
+  <city>San Francisco</city>
+  <statecode>CA</statecode>
+  <zipcode>94111-1234</zipcode>
+</address>
+
