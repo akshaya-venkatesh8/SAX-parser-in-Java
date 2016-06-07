@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.github.akshayavenkatesh8;
 import java.util.jar.Attributes;
 import jdk.internal.org.xml.sax.SAXException;
@@ -13,7 +9,7 @@ import org.xml.sax.helpers.DefaultHandler;
  */
 class USAddressHandler extends DefaultHandler {
     public Address address = new Address();
-    public String temp;
+    public String elementContent;
     @Override
    public void startElement(String uri, String localName, String qName, Attributes att) throws SAXException {
        
