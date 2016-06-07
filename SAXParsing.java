@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.github.akshayavenkatesh8;
 
 import java.io.File;
@@ -27,10 +23,9 @@ public class SAXParsing {
         File inputFile = new File("address.xml");
          SAXParserFactory factory = SAXParserFactory.newInstance();
          SAXParser saxParser = factory.newSAXParser();
-         UserHandler userhandler = new UserHandler();
+         USAddressHandler userhandler = new USAddressHandler();
          saxParser.parse(inputFile, userhandler);
-         Address add= new Address();
-         add= userhandler.getAddress();
+        Address add = userhandler.getAddress();
          System.out.println(add);      
           } 
          catch (Exception e) {
