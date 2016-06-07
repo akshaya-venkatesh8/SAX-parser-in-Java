@@ -28,12 +28,15 @@ public class SAXParsing {
          factory.setSchema(schemaFactory.newSchema(new Source[] {new StreamSource("address.xsd")}));
          SAXParser saxParser = factory.newSAXParser();
          XMLReader reader = saxParser.getXMLReader();
-         reader.setErrorHandler(new InvalidXMLErrorHandler());
+         InvalidXMLErrorHandler ieh = new InvalidXMLErrorHandler();
+         reader.setErrorHandler(ieh);
          reader.parse(new InputSource("address.xml"));
+         if (ieh.check == null){
          USAddressHandler userhandler = new USAddressHandler();
          saxParser.parse(inputFile, userhandler);
          Address add = userhandler.getAddress();
-         System.out.println(add);      
+         System.out.println(add);
+         }
           } 
          catch (Exception e) {
              System.out.println(e);
