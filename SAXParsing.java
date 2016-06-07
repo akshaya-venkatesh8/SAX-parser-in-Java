@@ -28,7 +28,7 @@ public class SAXParsing {
          factory.setSchema(schemaFactory.newSchema(new Source[] {new StreamSource("address.xsd")}));
          SAXParser saxParser = factory.newSAXParser();
          XMLReader reader = saxParser.getXMLReader();
-         reader.setErrorHandler(new SimpleErrorHandler());
+         reader.setErrorHandler(new InvalidXMLErrorHandler());
          reader.parse(new InputSource("address.xml"));
          USAddressHandler userhandler = new USAddressHandler();
          saxParser.parse(inputFile, userhandler);
