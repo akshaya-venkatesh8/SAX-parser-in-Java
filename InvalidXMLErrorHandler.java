@@ -9,7 +9,7 @@ import org.xml.sax.SAXParseException;
  *
  * @author akshaya
  */
-class SimpleErrorHandler implements ErrorHandler{
+class InvalidXMLErrorHandler implements ErrorHandler{
 
     @Override
     public void warning(SAXParseException exception) throws SAXException {
