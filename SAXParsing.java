@@ -22,10 +22,17 @@ public class SAXParsing {
       try {	
         File inputFile = new File("address.xml");
          SAXParserFactory factory = SAXParserFactory.newInstance();
+         factory.setValidating(false);
+         factory.setNamespaceAware(true);
+         SchemaFactory schemaFactory = SchemaFactory.newInstance("http://www.w3.org/2001/XMLSchema");
+         factory.setSchema(schemaFactory.newSchema(new Source[] {new StreamSource("address.xsd")}));
          SAXParser saxParser = factory.newSAXParser();
+         XMLReader reader = saxParser.getXMLReader();
+         reader.setErrorHandler(new SimpleErrorHandler());
+         reader.parse(new InputSource("address.xml"));
          USAddressHandler userhandler = new USAddressHandler();
          saxParser.parse(inputFile, userhandler);
-        Address add = userhandler.getAddress();
+         Address add = userhandler.getAddress();
          System.out.println(add);      
           } 
          catch (Exception e) {
